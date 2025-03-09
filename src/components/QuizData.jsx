@@ -38,17 +38,17 @@ export default function QuizData({timeRemaining,totalTime,setTimeRemaining,setSh
       }   
     }
 
-    // useEffect(()=>{
-    //   if(timeRemaining === 0){
-    //     handleNextButton();
-    //     return;
-    //   }
-    //   const timer = setInterval(()=>{
-    //       setTimeRemaining(timeRemaining - 1);
-    //   },1000)
+    useEffect(()=>{
+      if(timeRemaining === 0){
+        handleNextButton();
+        return;
+      }
+      const timer = setInterval(()=>{
+          setTimeRemaining(timeRemaining - 1);
+      },1000)
 
-    //   return ()=> clearInterval(timer);
-    // },[timeRemaining,setTimeRemaining,handleNextButton])
+      return ()=> clearInterval(timer);
+    },[timeRemaining,setTimeRemaining,handleNextButton])
 
 
   return (
