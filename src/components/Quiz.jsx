@@ -22,7 +22,7 @@ export default function quiz() {
         <div className="quizHeader">
             <img className='quizLogo' src={logo} alt="" />
             <div className="questionNumberContainer"><p className='numOfQuestion'>{score}/{quizQuestions.length}</p></div>
-            <img className='quizVolume' src={volume} alt="" />
+            {/* <img className='quizVolume' src={volume} alt="" /> */}
         </div>
         
 

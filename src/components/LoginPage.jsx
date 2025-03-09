@@ -10,23 +10,41 @@ export default function LoginPage() {
   const [email , setEmail] = useState("");
   const [password ,setPassword] = useState("");
 
-const handleLogin = async (e)=>{
+// const handleLogin = async (e)=>{
+//   e.preventDefault();
+//   try{
+//    await signInWithEmailAndPassword(auth,email,password);
+//     window.location.href = '/home'
+//   toast.success('Logged in successfully!',{
+//     position:'top-center'
+//   })
+
+//   }catch(error){
+//     console.log(error.message);
+//     toast.success(error.message,{
+//     position:'bottom-center'
+//   })
+
+//   }
+// }
+
+const handleLogin = async (e) => {
   e.preventDefault();
-  try{
-   await signInWithEmailAndPassword(auth,email,password);
-    window.location.href = '/home'
-  toast.success('Logged in successfully!',{
-    position:'top-center'
-  })
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
 
-  }catch(error){
-    console.log(error.message);
-    toast.success(error.message,{
-    position:'bottom-center'
-  })
+    console.log("Logged in user:", user); // Debugging: Check if login is successful
+    toast.success('Logged in successfully!', { position: 'top-center' });
 
+    window.location.href = '/home';  // Redirect after login
+
+  } catch (error) {
+    console.error("Login error:", error.message);
+    toast.error(error.message, { position: 'bottom-center' });
   }
-}
+};
+
 
   return (
     <div className="loginMainDiv">

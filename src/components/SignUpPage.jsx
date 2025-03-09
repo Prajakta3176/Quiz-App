@@ -18,18 +18,23 @@ const handleSignUp = async (e)=>{
    await createUserWithEmailAndPassword(auth,email,password);
    const user = auth.currentUser;
    console.log(user);
-  if(user){
-    await setDoc(doc(db,'Users',user.uid),{
-      firstName: fname,
-      lastName: lname,
-      email: email,
-      uid: user.uid,
-      createdAt: new Date(),
-    });
-  }
+   console.log("registered successfully");
+  // if(user){
+  //   await setDoc(doc(db,'Users',user.uid),{
+  //     firstName: fname,
+  //     lastName: lname,
+  //     email: email,
+  //     uid: user.uid,
+  //     createdAt: new Date(),
+  //   });
+  // }
+
+  window.location.href = '/';
   toast.success('Account created successfully!',{
     position:'top-center'
   })
+
+
 
   }catch(error){
     console.log(error.message);
@@ -39,6 +44,37 @@ const handleSignUp = async (e)=>{
 
   }
 }
+
+
+// const handleSignUp = async (e) => {
+//   e.preventDefault();
+//   try {
+//     // Create user in Firebase Authentication
+//     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+//     const user = userCredential.user;
+
+//     if (user) {
+//       console.log("User signed up:", user.uid); // Debugging log
+
+//       // Save user details in Firestore
+//       await setDoc(doc(db, 'Users', user.uid), {
+//         firstName: fname,
+//         lastName: lname,
+//         email: email,
+//         uid: user.uid,
+//         createdAt: new Date().toISOString(),
+//       });
+
+//       console.log("User added to Firestore:", user.uid); // Debugging log
+//     }
+
+//     toast.success('Account created successfully!', { position: 'top-center' });
+//   } catch (error) {
+//     console.error("Error during sign-up:", error.message); // Log error
+//     toast.error(error.message, { position: 'bottom-center' });
+//   }
+// };
+
 
 
 
@@ -61,7 +97,7 @@ const handleSignUp = async (e)=>{
         <input required max={6} id='password' type="password" placeholder='Set password' value={password}  onChange={(e)=>{setPassword(e.target.value)}} />
         
 
-        <Link to={'/home'} className='toHomeLink' >SIGN UP</Link>
+        <button onClick={handleSignUp}  className='toHomeLink' >SIGN UP</button>
 
         <p className='signInMessage'>Already have an account ? <Link className='signInLink' to={'/login'}>Sign In</Link></p>
         </form>
