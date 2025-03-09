@@ -38,17 +38,17 @@ export default function QuizData({timeRemaining,totalTime,setTimeRemaining,setSh
       }   
     }
 
-    useEffect(()=>{
-      if(timeRemaining === 0){
-        handleNextButton();
-        return;
-      }
-      const timer = setInterval(()=>{
-          setTimeRemaining(timeRemaining - 1);
-      },1000)
+    // useEffect(()=>{
+    //   if(timeRemaining === 0){
+    //     handleNextButton();
+    //     return;
+    //   }
+    //   const timer = setInterval(()=>{
+    //       setTimeRemaining(timeRemaining - 1);
+    //   },1000)
 
-      return ()=> clearInterval(timer);
-    },[timeRemaining,setTimeRemaining,handleNextButton])
+    //   return ()=> clearInterval(timer);
+    // },[timeRemaining,setTimeRemaining,handleNextButton])
 
 
   return (
@@ -62,15 +62,14 @@ export default function QuizData({timeRemaining,totalTime,setTimeRemaining,setSh
                 {
                   quizQuestions[currentQuestion].options.map((option,index)=>{
                     return (
-                    <div key={index} className={`options ${selectedOption ? (option === quizQuestions[currentQuestion].answer ? 'correct' : option === selectedOption ?  'wrong' : "") : ""}`}>
-                      <input  onClick={(e)=>{
-                        if(!selectedOption) setSelectedOption(e.target.value);
-                        if( e.target.value === quizQuestions[currentQuestion].answer){
-                          setScore(score + 1);
-                        }
-                       }
-                      } 
-                        name="option" id={`option${index}`} type="radio" value={option} placeholder={option} checked={selectedOption === option} />
+                    <div onClick={()=>{
+                      if(!selectedOption) setSelectedOption(option);
+                      if( option === quizQuestions[currentQuestion].answer){
+                        setScore(score + 1);
+                      }
+                     }
+                    }  key={index} className={`options ${selectedOption ? (option === quizQuestions[currentQuestion].answer ? 'correct' : option === selectedOption ?  'wrong' : "") : ""}`}>
+                      <input name="option" id={`option${index}`} type="radio" value={option} placeholder={option} checked={selectedOption === option} />
                       <label htmlFor={`option${index}`}>{option}</label>
                       </div>)
                   })
