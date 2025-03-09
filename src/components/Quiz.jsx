@@ -27,7 +27,7 @@ export default function quiz() {
         
 
         {
-           currentQuestion < quizQuestions.length  ? <QuizData timeRemaining={timeRemaining} setTimeRemaining={setTimeRemaining} totalTime={totalTime} timeRemaining={timeRemaining} setTimeRemaining={setTimeRemaining} setShowResult={setShowResult} score={score} setScore={setScore} currentQuestion={currentQuestion} setCurrentQuestion={setCurrentQuestion}/> : <ResultPage score={score} totalQuestions={quizQuestions.length}/>
+           currentQuestion < quizQuestions.length  ? <QuizData timeRemaining={timeRemaining} setTimeRemaining={setTimeRemaining} totalTime={totalTime}  setShowResult={setShowResult} score={score} setScore={setScore} currentQuestion={currentQuestion} setCurrentQuestion={setCurrentQuestion}/> : <ResultPage score={score} totalQuestions={quizQuestions.length}/>
         }
              
             
