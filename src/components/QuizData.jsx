@@ -22,6 +22,7 @@ export default function QuizData({timeRemaining,totalTime,setTimeRemaining,setSh
   
 
     const handleNextButton = ()=>{ 
+      console.log(score);
       if(timeRemaining === 0 && !selectedOption){
         setCurrentQuestion(currentQuestion + 1);
         setTimeRemaining(totalTime);
@@ -48,7 +49,7 @@ export default function QuizData({timeRemaining,totalTime,setTimeRemaining,setSh
       },1000)
 
       return ()=> clearInterval(timer);
-    },[timeRemaining,setTimeRemaining,handleNextButton])
+    },[timeRemaining,setTimeRemaining])
 
 
   return (
@@ -63,10 +64,12 @@ export default function QuizData({timeRemaining,totalTime,setTimeRemaining,setSh
                   quizQuestions[currentQuestion].options.map((option,index)=>{
                     return (
                     <div onClick={()=>{
-                      if(!selectedOption) setSelectedOption(option);
-                      if( option === quizQuestions[currentQuestion].answer){
-                        setScore(score + 1);
-                      }
+                      if(!selectedOption){
+                        setSelectedOption(option);
+                        if( option === quizQuestions[currentQuestion].answer){
+                          setScore((prevScore) => prevScore + 1);
+                        }
+                      }                    
                      }
                     }  key={index} className={`options ${selectedOption ? (option === quizQuestions[currentQuestion].answer ? 'correct' : option === selectedOption ?  'wrong' : "") : ""}`}>
                       <input name="option" id={`option${index}`} type="radio" value={option} placeholder={option} checked={selectedOption === option} />
