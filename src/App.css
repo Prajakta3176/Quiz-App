@@ -448,7 +448,7 @@ form{
 
 
 @media (max-width:550px) {
-  .loginBox, .signupBox, .homeContent, .quizContainer{
+  .loginBox, .signUpBox, .homeContent, .quizContainer{
     max-width: 300px;
   }
 }
