@@ -32,13 +32,6 @@ export default function Home() {
       <div className="homeLogo"> 
             <img src={logo} alt="" />
         </div>
-        <div>
-        {
-          userDetails ? (
-              <h2 className='welcomeText'>Welcome {userDetails.firstName}</h2>
-          ) : ""
-        }
-        </div>
         
 
         <Link className='startQuizButton' to={'/quiz'}>Start Now</Link>

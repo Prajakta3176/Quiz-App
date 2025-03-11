@@ -56,7 +56,7 @@ export default function QuizData({timeRemaining,totalTime,setTimeRemaining,setSh
     <>
       <div className="quizeHeader2">
             <div className='timerContainer'><p className="quizTimer">{timeRemaining}:{totalTime}</p></div>
-        </div>
+      </div>
       <div className="questionContainer"><p>{quizQuestions[currentQuestion].question}</p></div>
       <p className={`selectOptionAlert ${redAlert ? 'visible' : 'notVisible'}`}>Please select an option</p>
       <div className="answerContainer">                 

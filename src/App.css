@@ -1,13 +1,19 @@
+
+
 *{
   box-sizing: border-box;
   /* overflow-x: hidden; */
 }
 html{
-  --primary-color : linear-gradient(to right, #5D8736,#F4FFC3);
+   --primary-color : radial-gradient(circle,  rgba(148,187,233,1) 0%, #213555 100%);
+   --secondary-color : #D9EAFD;
+   --primary-box-shadow : 0 0 5px 4px white;
 }
 
 body{
   background: var(--primary-color);
+ 
+
 }
 
 .loginMainDiv,.signUpMainDiv{
@@ -19,36 +25,83 @@ justify-content: center;
 background: var(--primary-color);
 }
 
+.loginBox h1{
+  font-family: "Tourney", sans-serif;
+  /* font-size: larger; */
+  font-weight: 700;
+  font-size: 50px;
+}
+
+
+.signUpBox h1{
+  text-align: center;
+  font-family: "Tourney", sans-serif;
+  font-weight: 700;
+  font-size: 50px;
+}
+
+
 .loginBox{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
-  padding: 2rem;
+  box-shadow: var(--primary-box-shadow);
+  padding: 2.5rem;
   border-radius: 10px;
-  background-color: #fff;
+  background-color: var(--secondary-color);
+  max-width:400px;
+  width: 100%;
 }
 .signUpBox{
   display: flex;
   flex-direction: column;
   /* align-items: center; */
   /* justify-content: center; */
-  border: 1px solid black;
+  box-shadow: var(--primary-box-shadow);
+
   padding: 2rem;
   border-radius: 10px;
-  background-color: #fff;
+  background-color: var(--secondary-color);
+  max-width:400px;
+  width: 100%;
 }
 
-.toHomeLink{
+
+.loginBox button{
   width: 100%;
   border-radius: 12px;
   padding: 0.4rem;
   border: 1px solid black;
   text-decoration: none;
-  color: black;
-  text-align: center;
-  background: var(--primary-color)
+  background: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
+}
+
+.signUpBox button{
+  /* width: 100%;
+  border-radius: 12px;
+  padding: 0.4rem;
+  background: var(--primary-color) */
+  width: 100%;
+  border-radius: 12px;
+  padding: 0.4rem;
+  border: 1px solid black;
+  text-decoration: none;
+  background: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
 }
 
 .signUpBox input{
@@ -58,12 +111,15 @@ background: var(--primary-color);
 .loginBox input{
   padding: 0.5rem;
   border-radius: 12px;
-}
-
-.loginBox input{
   margin-bottom: 1rem;
-
+  width: 100%;
+  height: 40px;
 }
+
+.loginBox form{
+  width: 100%;
+}
+
 .signUpBox input{
   margin-bottom: 1rem;
   cursor: pointer;
@@ -93,19 +149,6 @@ background: var(--primary-color);
 
 }
 
-/* .loginBox Link{
-  width: 100%;
-  border-radius: 12px;
-  padding: 0.4rem;
-  text-align: center;
-  background: var(--primary-color)
-} */
-.signUpBox button{
-  width: 100%;
-  border-radius: 12px;
-  padding: 0.4rem;
-  background: var(--primary-color)
-}
 
 .loginBox .signUpMessage{
   margin-top: 1rem;
@@ -132,8 +175,11 @@ justify-content: center;
   gap: 2rem;
   align-items: center;
   justify-content: center; 
-  box-shadow: 0 0 5px 4px #809D3C;
+  box-shadow: var(--primary-box-shadow);
   padding: 4rem;
+  background-color: var(--secondary-color);
+  max-width: 400px;
+  width: 100%;
 }
 
 .welcomeText{
@@ -150,17 +196,22 @@ justify-content: center;
   width: 100%;
 }
 
+
 .homePage .startQuizButton{
-  width: 200px;
-  border: 1px solid green;
-  padding: 1rem;
-  font-size: 1.5rem;
-  border-top-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  text-align: center;
-  color: white;
-  background-color: #5D8736;
+  width: 100%;
+  border-radius: 12px;
+  padding: 0.4rem;
+  border: 1px solid black;
   text-decoration: none;
+  color: black;
+  background: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
 }
 
 .quizPage{
@@ -188,33 +239,50 @@ overflow-x: hidden;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
-  box-shadow: 0 0 5px 4px #809D3C;
+  padding-block: 1rem;
+  padding-left: 1rem;
+  /* padding-right: 0.3rem; */
+  box-shadow: 0 0 5px 4px rgba(148,187,233,1);
   border-radius: 12px;
+}
+
+.quizeHeader2{
+  padding-inline: 1rem;
 }
 
 .quizContainer .questionContainer{
   /* margin-top: 70px; */
   width: 100%;
-  border: 3px solid #809D3C;
-  background-color: #F4FFC3;
+  height: 70px;
+  border: 3px solid var(--secondary-color);
+  box-shadow:  0 0 5px 4px rgba(148,187,233,1);
+  background-color: white;
   padding-inline: 0.5rem;
   border-radius: 12px;
+  display: flex;
+  /* text-align: center; */
+  align-items: center;
+  justify-content: start;
+  padding-left: 2rem;
+  font-size: 1.1rem;
 }
 
 .answerContainer{
-  margin-top: 3rem;
+  margin-top: 1.7rem;
   width: 100%;
   /* background-color: #fff; */
 }
 
 .answerContainer .options{
-  background-color: #F4FFC3;
-  margin-bottom: 1rem;
+  background-color: var(--secondary-color);
+  margin-bottom: 2rem;
   padding: 1rem;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   border-radius: 12px;
   cursor: pointer;
+  box-shadow: var(--primary-box-shadow);
+  font-size: 1.05rem;
+  margin-left: 0.5rem;
 }
 
 
@@ -232,12 +300,12 @@ overflow-x: hidden;
   width: 100%;
   /* border: 1px solid black; */
   padding: 0;
-  margin-top: 1.5rem;
+  margin-block: 0.5rem;
   display: flex;
   justify-content: flex-end;
 }
 .quizTimer{
- 
+
   width: max-content;
   border: 3px solid white;
   color: black;
@@ -250,13 +318,13 @@ overflow-x: hidden;
 
 .numOfQuestion{
   width: max-content;
-  border: 3px solid white;
+  border: 3px solid black;
   color: black;
   padding: 0.5rem;
   font-weight: bold;
-  background-color:#809D3C;
+  background-color:white;
   border-radius: 12px;
-  color: white;
+  color: black;
 }
 
 
@@ -275,17 +343,21 @@ overflow-x: hidden;
   justify-content: flex-end;
 }
 
+
 .quizContainer .nextButton{
-  /* padding: 0.8rem 1.5rem; */
   cursor: pointer;
-   max-width: 100px;
-  height: 50px; 
-  width: 100%;
-  font-size: larger;
+  max-width: 150px;
+ height: 50px; 
+ width: 100%;
+ font-size: larger;
   border-radius: 12px;
-  background-color:#809D3C;
+  padding: 0.4rem;
+  border: 1px solid white;
+  text-decoration: none;
   color: white;
-  border: 3px solid white;
+  text-align: center;
+  height: 40px;
+  background: var(--primary-color)
 }
 
 .nextButton:hover{
@@ -336,11 +408,24 @@ margin-top: 3rem;
 .result-container{
   width: max-content;
   margin-inline: auto;
-  box-shadow: 0 0 3px 4px #809D3C;
+  box-shadow: 0 0 3px 4px white;
   padding: 2rem;
-  background-color: #F4FFC3;
+  background-color: rgba(148,187,233,1);
   text-align: center;
-  color: #3E7B27;
+  color: white;
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-container h2{
+  text-align: center;
+  font-family: "Tourney", sans-serif;
+  /* font-weight: 700; */
+  font-size: 30px;
 }
 
 form{
