@@ -20,9 +20,10 @@ const quizQuestions = [
     id: 3,
     question: "How do you create a React component?",
     options: [
-      "By using a function or a class",
+      
       "By writing SQL queries",
       "By using only HTML",
+      "By using a function or a class",
       "By using a database"
     ],
     answer: "By using a function or a class"
@@ -37,10 +38,11 @@ const quizQuestions = [
     id: 5,
     question: "What is JSX?",
     options: [
-      "A syntax extension for JavaScript",
+      
       "A new programming language",
       "A type of database",
-      "A CSS framework"
+      "A CSS framework",
+      "A syntax extension for JavaScript",
     ],
     answer: "A syntax extension for JavaScript"
   },
@@ -54,8 +56,9 @@ const quizQuestions = [
     id: 7,
     question: "What does the useState hook return?",
     options: [
-      "An array with a state value and a function to update it",
       "Only the current state value",
+      "An array with a state value and a function to update it",
+      
       "A new React component",
       "A function that runs once"
     ],
@@ -64,7 +67,7 @@ const quizQuestions = [
   {
     id: 8,
     question: "How do you pass data to a child component?",
-    options: ["Using props", "Using state", "Using functions", "Using CSS"],
+    options: ["Using state","Using props",  "Using functions", "Using CSS"],
     answer: "Using props"
   },
   {
@@ -77,9 +80,10 @@ const quizQuestions = [
     id: 10,
     question: "What is the virtual DOM?",
     options: [
+      "A type of database",
       "A lightweight copy of the real DOM",
       "A new programming language",
-      "A type of database",
+      
       "A styling tool in React"
     ],
     answer: "A lightweight copy of the real DOM"
