@@ -244,7 +244,12 @@ overflow-x: hidden;
 }
 
 .quizeHeader2{
-  padding-inline: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: 1rem;
+  /* padding-inline: 1rem; */
 }
 
 .quizContainer .questionContainer{
@@ -294,15 +299,13 @@ overflow-x: hidden;
 
 }
 .timerContainer{
-  width: 100%;
+  /* width: 100%; */
   /* border: 1px solid black; */
   padding: 0;
   margin-block: 0.5rem;
-  display: flex;
-  justify-content: flex-end;
 }
-.quizTimer{
 
+.quizeHeader2 p{
   width: max-content;
   border: 3px solid white;
   color: black;
@@ -310,7 +313,13 @@ overflow-x: hidden;
   font-weight: bold;
   background-color:#FFCF50;
   border-radius: 12px;
+}
 
+.scoreContainer{
+  margin-block: 0.5rem;
+  padding: 0;
+  display: flex;
+  margin-right: 1.5rem;
 }
 
 .numOfQuestion{
@@ -325,14 +334,6 @@ overflow-x: hidden;
 }
 
 
-.questionNumberContainer{
-  width: 100%;
-  /* border: 1px solid black; */
-  padding: 0;
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 1.5rem;
-}
 
 .quizContainer .nextButtonDiv{
   width: 100%;

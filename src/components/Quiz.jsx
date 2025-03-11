@@ -21,7 +21,7 @@ export default function quiz() {
         <div className="quizContainer">
         <div className="quizHeader">
             <img className='quizLogo' src={logo} alt="" />
-            <div className="questionNumberContainer"><p className='numOfQuestion'>{score}/{quizQuestions.length}</p></div>
+            <div className="scoreContainer"><p className='numOfQuestion'>{score}/{quizQuestions.length}</p></div>
             {/* <img className='quizVolume' src={volume} alt="" /> */}
         </div>
         
