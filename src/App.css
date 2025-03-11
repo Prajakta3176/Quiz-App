@@ -56,10 +56,7 @@ background: var(--primary-color);
 .signUpBox{
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: center; */
   box-shadow: var(--primary-box-shadow);
-
   padding: 2rem;
   border-radius: 10px;
   background-color: var(--secondary-color);
@@ -226,7 +223,7 @@ overflow-x: hidden;
 .quizContainer{
   max-width: 700px;
   margin-inline: auto;
-  /* height: calc(100% - 70px ) */
+
 }
 
 .quizPage .quizLogo{
@@ -447,4 +444,18 @@ form{
 
 .notVisible{
   opacity: 0;
+}
+
+
+@media (max-width:550px) {
+  .loginBox, .signupBox, .homeContent, .quizContainer{
+    max-width: 300px;
+  }
+}
+
+
+@media(max-width:830px){
+  .quizContainer{
+    max-width: 500px;
+  }
 }
